@@ -258,12 +258,12 @@ func (v *fileVisitor) class(n *ast.FuncDecl) *Class {
 }
 
 func (v *fileVisitor) recvName(n *ast.FuncDecl) string {
-	if n.Recv == nil {
-		return "-"
-	}
-	recv := n.Recv.List[0].Type
-	start := v.fset.Position(recv.Pos())
-	end := v.fset.Position(recv.End())
-	name := string(v.fileData[start.Offset:end.Offset])
-	return strings.TrimSpace(strings.TrimLeft(name, "*"))
+	// if n.Recv == nil {
+	return "-"
+	// }
+	// recv := n.Recv.List[0].Type
+	// start := v.fset.Position(recv.Pos())
+	// end := v.fset.Position(recv.End())
+	// name := string(v.fileData[start.Offset:end.Offset])
+	// return strings.TrimSpace(strings.TrimLeft(name, "*"))
 }
